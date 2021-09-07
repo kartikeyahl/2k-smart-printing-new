@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>2K Smart Printing Upload & Print</title>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/upload.css')}}" /> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body style="background-image: url('/static/images/bg2.jpg');">
+
+  <!--<img src="{{ url_for('static', filename='images/bg2.jpg')}}" alt="" />-->
+  <input type="checkbox" id="nav-toggle" style="display: none" />
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <h2><span class="lab la-pagelines"></span><span>2K Smart Printing</span></h2>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <a href="/home"><span class="las la-home"></span><span>Home</span></a>
+        </li>
+        <li>
+          <a href="/home/upload" class="active"><span class="las la-cloud-upload-alt"></span><span>Upload & Print</span></a>
+        </li>
+        <li>
+          <a href="/home/contact"><span class="las la-phone"></span><span>Contact Us</span></a>
+        </li>
+        <li>
+          <a href="/logout"><span class="las la-door-open"></span><span>Sign Out</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <header>
+      <h2>
+        <label for="nav-toggle">
+          <span class="las la-bars"></span>
+        </label>
+        Upload & Print
+      </h2>
+    </header>
+    <div class="upload-details">
+      <div class="title" style="color: #111;font-size: 25px;
+  font-weight: 500;
+  position: relative;">Upload File</div>
+    <div class="content">
+      <form action="/home/upload/do" method="post" enctype="multipart/form-data" >
+        <div class="input-box1">
+          <span class="details">Upload File</br></span>
+          <input type="file" name="inputFile" required>
+        </div>
+        </br>
+        <div class="input-box">
+            <span class="details">No. of copies</br></span>
+            <input type="number" name= "pages" placeholder="Enter no. of copies" required>
+          </div>
+          </br>
+          <div class="coloring">
+          <span class="details">Color</br></span>
+          <input type="radio" name="color" value="Colored" id="cl-1" required>
+          <input type="radio" name="color" value="B&W" id="cl-2" required>
+          <div class="category">
+            <label for="cl-2">
+              <span class="cl two"></span>
+              <span class="color">Black & White</span>
+            </label>
+            <label for="cl-1">
+            <span class="cl one"></span>
+            <span class="color">Colored </span>
+          </label>
+          
+          </div>
+        </div>
+        </br>
+        <div class="lamination">
+          <span class="details">Lamination</br></span>
+          <input type="radio" name="laminate" value="Yes" id="lam-1" required>
+          <input type="radio" name="laminate" value="No" id="lam-2" required>
+          <div class="category">
+            <label for="lam-1">
+            <span class="lam one"></span>
+            <span class="laminate">Yes</span>
+          </label>
+          <label for="lam-2">
+            <span class="lam two"></span>
+            <span class="laminate">No</span>
+          </label>
+          </div>
+        </div>
+        </br>
+        <div class="binding">
+          <span class="details">Binding</br></span>
+          <input type="radio" name="bind" value="Yes" id="bin-1" required>
+          <input type="radio" name="bind" value="No" id="bin-2" required>
+          <div class="category">
+            <label for="bin-1">
+            <span class="bin one"></span>
+            <span class="bind">Yes</span>
+          </label>
+          <label for="bin-2">
+            <span class="bin two"></span>
+            <span class="bind">No</span>
+          </label>
+          </div>
+        </div>
+        </br>
+        <div class="input-box">
+            <span class="details">Additional Info.</br></span>
+            <input type="text" name="additional" placeholder="Enter Additonal Info.">
+          </div>
+
+
+
+
+          <div id="up1" class="modal">
+            <span onclick="document.getElementById('up1').style.display='none'" class="close" title="Close Modal">×</span>
+            
+              <div class="contain123">
+                <h1 style="color: #4481eb">Get Location</h1>
+                <p>This Location is used to search for nearby shops</p>
+                </br>
+                <div class="input-field" id="latsk">
+                    <i src="https://www.pngitem.com/pimgs/m/94-941550_location-icon-png-grey-transparent-png-location-icon.png"></i>
+                    <input type="text" name="latt" id="latt" placeholder="Latitude"/>
+                </div>
+                <div class="input-field" id="longsk">
+                  <i src="https://www.pngitem.com/pimgs/m/94-941550_location-icon-png-grey-transparent-png-location-icon.png"></i>
+                  <input type="text" name="longg" id="longg" placeholder="Longitude"/>
+              </div>
+                </br>
+                <div class="clearfix">
+                  <button1 type="button1" class="getbtn" onclick="getLocation()">Get Location</button1>
+                  <input type="submit" class="paybtn" value="Proceed">
+
+                  <!--<a class="paybtn" href='/shop'>Proceed</a>-->
+                </div>
+              </div>
+           
+          </div>
+        
+
+        <div class="button">
+          <input type="button" value="Upload" onclick="document.getElementById('up1').style.display='block'">
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+  
+
+  <script src="{{ url_for('static', filename='js/new.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/upload.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/scrr.js')}}"></script>
+</body>
+</html>

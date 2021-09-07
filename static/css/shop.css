@@ -1,0 +1,62 @@
+:root{
+    --main-color: #4481eb;
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+  }
+
+
+h1 {
+    text-align: center;
+    
+    text-transform: uppercase;
+    font: 25px "Lato", sans-serif;
+    font-weight: bold;
+}
+
+table {
+    text-align: center;
+    
+    text-transform: uppercase;
+    font: 22px "Lato", sans-serif;    
+}
+
+td {
+padding-left: 4%;
+    text-align: center;
+}
+
+.contain123 {
+    padding: 16px;
+    text-align: center;
+    z-index: 200;
+    background-color: #fff;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 12%;
+    margin-bottom: 12%;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  .button{
+    height: 25px;
+    margin: 17px 0
+  }
+  .button input{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #4481eb);
+  }
+  .button input:hover{
+   /* transform: scale(0.99); */
+   background: linear-gradient(-135deg, #71b7e6, #4481eb);
+   }

@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Form!</title>
+</head>
+<body>
+<h1>Our form will be here!</h1>
+<form method="POST" action="{{ url_for('') }}">
+    {{ form.csrf_token }}
+    {{ form.email.label }}
+    {{ form.email }}
+    {{ form.username.label }}
+    {{ form.username }}
+    {{ form.password.label }}
+    {{ form.password }}
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

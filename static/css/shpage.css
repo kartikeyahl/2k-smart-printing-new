@@ -1,0 +1,121 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .updatebtn {
+  float: left;
+  width: 50%;
+  border: none;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+  border: none;
+}
+
+/* Add a color to the delete button */
+.updatebtn {
+  background-color: #4481eb;
+  color: white;
+}
+
+/* Add padding and center-align text to the container */
+.contain123 {
+  padding: 16px;
+  text-align: center;
+  z-index: 200;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 15%;
+  background-color: rgb(56, 165, 238, 0.5);
+  z-index: 200;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 50%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+}
+
+/* Style the horizontal ruler */
+hr {
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+
+input[type="checkbox"]
+{
+	position: relative;
+	width: 30px;
+	height: 15px;
+	-webkit-appearance: none;
+	background: #c6c6c6;
+	outline: none;
+	border-radius: 7.5px;
+	box-shadow: inset 0 0 1px rgba(0,0,0,.2);
+	transition: .5s;
+}
+input:checked[type="checkbox"] {
+	background: #03a9f4;
+}
+input[type="checkbox"]:before
+{
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-radius: 7.5px;
+	top: 0;
+	left: 0;
+	background: #fff;
+	transform: scale(1.1);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+	transition: .5s
+}
+input:checked[type="checkbox"]:before
+{
+	left: 15px;
+}
